@@ -1,0 +1,23 @@
+[package]
+name = "omniwars"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wgpu = "22.1"
+winit = "0.30.5"
+egui = "=0.29.1"
+egui-wgpu = "=0.29.1"
+egui-winit = "=0.29.1"
+pollster = "0.3"
+glam = "0.29"
+bytemuck = { version = "1", features = ["derive"] }
+
+[profile.dev]
+opt-level = 2
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
